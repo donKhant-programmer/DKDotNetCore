@@ -14,7 +14,8 @@ namespace DKDotNetCore.ConsoleApp
             DataSource = "DESKTOP-07LAQVO",
             InitialCatalog = "DotnetTrainingBatch4",
             UserID = "sa",
-            Password = "sa@123"
+            Password = "sa@123",
+            TrustServerCertificate = true
         };
     }
 }

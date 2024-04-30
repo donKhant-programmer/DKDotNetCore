@@ -32,8 +32,8 @@ Console.WriteLine("Hello, World!");
 //    Console.WriteLine("---------------------------------");
 //}
 
-//AdoDotNetExample adoDotNetExample = new AdoDotNetExample();
-////adoDotNetExample.Read();
+AdoDotNetExample adoDotNetExample = new AdoDotNetExample();
+adoDotNetExample.Read();
 ////adoDotNetExample.Create("myTitle", "myAuthor", "myContent");
 ////adoDotNetExample.Update(1002, "updatedTitle", "updatedAuthor", "updatedContent");
 ////adoDotNetExample.Delete(1003);
@@ -42,7 +42,7 @@ Console.WriteLine("Hello, World!");
 
 //DapperExample dapperExample = new DapperExample();
 //dapperExample.Run();
-EFCoreExample eFCoreExample = new EFCoreExample();
-eFCoreExample.Run();
+//EFCoreExample eFCoreExample = new EFCoreExample();
+//eFCoreExample.Run();
 
 Console.ReadKey();

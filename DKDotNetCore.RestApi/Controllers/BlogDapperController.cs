@@ -112,7 +112,7 @@ namespace DKDotNetCore.RestApi.Controllers
                 return NotFound("No data to update");
             }
 
-            var temp = conditions.Substring(0, conditions.Length);
+            //var temp = conditions.Substring(0, conditions.Length);
             conditions = conditions.Substring(0, conditions.Length - 2);
 
             blog.BlogId = id;

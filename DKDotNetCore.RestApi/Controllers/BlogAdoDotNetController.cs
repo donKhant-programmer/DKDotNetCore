@@ -9,7 +9,6 @@ namespace DKDotNetCore.RestApi.Controllers
     [ApiController]
     public class BlogAdoDotNetController : ControllerBase
     {
-
         [HttpGet]
         public IActionResult GetBlogs()
         {

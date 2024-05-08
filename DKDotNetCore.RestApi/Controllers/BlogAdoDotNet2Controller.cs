@@ -175,15 +175,6 @@ namespace DKDotNetCore.RestApi.Controllers
             parameters[parametersIndex] = new AdoDotNetParameter("@BlogId", id);
             parametersIndex++;
 
-            //if (!Int32.(blog.BlogId))
-            //{
-            //    parameters[parametersIndex] = new AdoDotNetParameter("@BlogId", id);
-            //    parametersIndex++;
-            //} else
-            //{
-
-            //}
-
             if (!string.IsNullOrEmpty(blog.BlogTitle))
             {
                 parameters[parametersIndex] = new AdoDotNetParameter("@BlogTitle", blog.BlogTitle);
@@ -201,7 +192,6 @@ namespace DKDotNetCore.RestApi.Controllers
                 parameters[parametersIndex] = new AdoDotNetParameter("@BlogContent", blog.BlogContent);
             }
 
-            
 
             string query = $@"UPDATE [dbo].[Table_Blog]
            SET {conditions} where [BlogId] = @BlogId";

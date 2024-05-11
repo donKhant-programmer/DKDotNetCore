@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DKDotNetCore.RestApi", "DKD
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DKDotNetCore.Shared", "DKDotNetCore.Shared\DKDotNetCore.Shared.csproj", "{18EAE2CB-4765-4985-A0E3-9E0FD36E657C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DKDotNetCore.RestApiWithNLayer", "DKDotNetCore.RestApiWithNLayer\DKDotNetCore.RestApiWithNLayer.csproj", "{EC8A608C-988B-457C-BF04-96AA33F33CC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DKDotNetCore.RestApiWithNLayer", "DKDotNetCore.RestApiWithNLayer\DKDotNetCore.RestApiWithNLayer.csproj", "{EC8A608C-988B-457C-BF04-96AA33F33CC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DKDotNetCore.ConsoleAppHttpClient", "DKDotNetCore.ConsoleAppHttpClient\DKDotNetCore.ConsoleAppHttpClient.csproj", "{689ED6F2-24FA-47D6-A826-69D90421C2F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{EC8A608C-988B-457C-BF04-96AA33F33CC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC8A608C-988B-457C-BF04-96AA33F33CC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC8A608C-988B-457C-BF04-96AA33F33CC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{689ED6F2-24FA-47D6-A826-69D90421C2F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{689ED6F2-24FA-47D6-A826-69D90421C2F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{689ED6F2-24FA-47D6-A826-69D90421C2F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{689ED6F2-24FA-47D6-A826-69D90421C2F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

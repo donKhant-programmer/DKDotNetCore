@@ -138,73 +138,73 @@ namespace DKDotNetCore.RestApi.Controllers
             return Ok(message);
         }
 
-        [HttpPatch("{id}")]
-        public IActionResult PatchBlog2(int id, BlogModel blog)
-        {
-            int numOfParameters = 0;
-            numOfParameters++; // for blogId
+        //[HttpPatch("{id}")]
+        //public IActionResult PatchBlog2(int id, BlogModel blog)
+        //{
+        //    int numOfParameters = 0;
+        //    numOfParameters++; // for blogId
 
-            string conditions = string.Empty;
-            if (!string.IsNullOrEmpty(blog.BlogTitle))
-            {
-                conditions += "[BlogTitle] = @BlogTitle, ";
-                numOfParameters++;
-            }
-            if (!string.IsNullOrEmpty(blog.BlogAuthor))
-            {
-                conditions += "[BlogAuthor] = @BlogAuthor, ";
-                numOfParameters++;
-            }
-            if (!string.IsNullOrEmpty(blog.BlogContent))
-            {
-                conditions += "[BlogContent] = @BlogContent, ";
-                numOfParameters++;
-            }
+        //    string conditions = string.Empty;
+        //    if (!string.IsNullOrEmpty(blog.BlogTitle))
+        //    {
+        //        conditions += "[BlogTitle] = @BlogTitle, ";
+        //        numOfParameters++;
+        //    }
+        //    if (!string.IsNullOrEmpty(blog.BlogAuthor))
+        //    {
+        //        conditions += "[BlogAuthor] = @BlogAuthor, ";
+        //        numOfParameters++;
+        //    }
+        //    if (!string.IsNullOrEmpty(blog.BlogContent))
+        //    {
+        //        conditions += "[BlogContent] = @BlogContent, ";
+        //        numOfParameters++;
+        //    }
 
-            if (conditions.Length == 0)
-            {
-                var response = new { IsSuccess = false, Message = "No data found." };
-                return NotFound(response);
-            }
+        //    if (conditions.Length == 0)
+        //    {
+        //        var response = new { IsSuccess = false, Message = "No data found." };
+        //        return NotFound(response);
+        //    }
 
-            conditions = conditions[..^2];
-
-
-            int parametersIndex = 0;
-            AdoDotNetParameter[] parameters = new AdoDotNetParameter[numOfParameters];
-            parameters[parametersIndex] = new AdoDotNetParameter("@BlogId", id);
-            parametersIndex++;
-
-            if (!string.IsNullOrEmpty(blog.BlogTitle))
-            {
-                parameters[parametersIndex] = new AdoDotNetParameter("@BlogTitle", blog.BlogTitle);
-                parametersIndex++;
-            }
-
-            if (!string.IsNullOrEmpty(blog.BlogAuthor))
-            {
-                parameters[parametersIndex] = new AdoDotNetParameter("@BlogAuthor", blog.BlogAuthor);
-                parametersIndex++;
-            }
-
-            if (!string.IsNullOrEmpty(blog.BlogContent))
-            {
-                parameters[parametersIndex] = new AdoDotNetParameter("@BlogContent", blog.BlogContent);
-            }
+        //    conditions = conditions[..^2];
 
 
-            string query = $@"UPDATE [dbo].[Table_Blog]
-           SET {conditions} where [BlogId] = @BlogId";
+        //    int parametersIndex = 0;
+        //    AdoDotNetParameter[] parameters = new AdoDotNetParameter[numOfParameters];
+        //    parameters[parametersIndex] = new AdoDotNetParameter("@BlogId", id);
+        //    parametersIndex++;
+
+        //    if (!string.IsNullOrEmpty(blog.BlogTitle))
+        //    {
+        //        parameters[parametersIndex] = new AdoDotNetParameter("@BlogTitle", blog.BlogTitle);
+        //        parametersIndex++;
+        //    }
+
+        //    if (!string.IsNullOrEmpty(blog.BlogAuthor))
+        //    {
+        //        parameters[parametersIndex] = new AdoDotNetParameter("@BlogAuthor", blog.BlogAuthor);
+        //        parametersIndex++;
+        //    }
+
+        //    if (!string.IsNullOrEmpty(blog.BlogContent))
+        //    {
+        //        parameters[parametersIndex] = new AdoDotNetParameter("@BlogContent", blog.BlogContent);
+        //    }
 
 
-            int result = _adoDotNetService.Execute(
-                query, parameters
-            );
+        //    string query = $@"UPDATE [dbo].[Table_Blog]
+        //   SET {conditions} where [BlogId] = @BlogId";
 
-            string message = result > 0 ? "Updating successful." : "Updating failed.";
 
-            return Ok(message);
-        }
+        //    int result = _adoDotNetService.Execute(
+        //        query, parameters
+        //    );
+
+        //    string message = result > 0 ? "Updating successful." : "Updating failed.";
+
+        //    return Ok(message);
+        //}
 
         [HttpDelete("{id}")]
         public IActionResult DeleteBlog(int id)

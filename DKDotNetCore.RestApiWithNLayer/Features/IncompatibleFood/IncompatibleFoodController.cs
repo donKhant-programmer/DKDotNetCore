@@ -45,7 +45,7 @@ namespace DKDotNetCore.RestApiWithNLayer.Features.IncompatibleFood
         }
     }
 
-0
+
     public class IncompatibleFood
     {
         public Tbl_Incompatiblefood[] Tbl_IncompatibleFood { get; set; }

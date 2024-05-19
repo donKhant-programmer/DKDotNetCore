@@ -31,7 +31,7 @@ namespace DotNetTrainingBatch4.ConsoleAppHttpClientExamples
                 List<BlogDto> lst = JsonConvert.DeserializeObject<List<BlogDto>>(jsonStr)!;
                 foreach (var item in lst)
                 {
-                    //Console.WriteLine(JsonConvert.SerializeObject(item));
+                    Console.WriteLine(JsonConvert.SerializeObject(item));
                     Console.WriteLine($"Title => {item.BlogTitle}");
                     Console.WriteLine($"Author => {item.BlogAuthor}");
                     Console.WriteLine($"Content => {item.BlogContent}");

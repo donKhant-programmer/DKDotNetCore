@@ -33,7 +33,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DKDotNetCore.PizzaApi", "DK
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DKDotNetCore.WinFormsApp", "DKDotNetCore.WinFormsApp\DKDotNetCore.WinFormsApp.csproj", "{BE6658BA-12EF-4779-A9FA-A6B1A1C58E3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DKDotNetCore.RetrofitExample", "DKDotNetCore.RetrofitExample\DKDotNetCore.RetrofitExample.csproj", "{4888A75E-0019-40BE-9460-7032E50B688C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DKDotNetCore.RefitExamples", "DKDotNetCore.RefitExamples\DKDotNetCore.RefitExamples.csproj", "{D5C7A253-B4D3-4051-9440-5464D7FFAABE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DKDotNetCore.RegisterationApi", "DKDotNetCore.RegisterationApi\DKDotNetCore.RegisterationApi.csproj", "{7091F1D3-2FD1-44CD-B0BA-73BB37F91CE7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -77,10 +79,14 @@ Global
 		{BE6658BA-12EF-4779-A9FA-A6B1A1C58E3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE6658BA-12EF-4779-A9FA-A6B1A1C58E3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE6658BA-12EF-4779-A9FA-A6B1A1C58E3E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4888A75E-0019-40BE-9460-7032E50B688C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4888A75E-0019-40BE-9460-7032E50B688C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4888A75E-0019-40BE-9460-7032E50B688C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4888A75E-0019-40BE-9460-7032E50B688C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5C7A253-B4D3-4051-9440-5464D7FFAABE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5C7A253-B4D3-4051-9440-5464D7FFAABE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5C7A253-B4D3-4051-9440-5464D7FFAABE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5C7A253-B4D3-4051-9440-5464D7FFAABE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7091F1D3-2FD1-44CD-B0BA-73BB37F91CE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7091F1D3-2FD1-44CD-B0BA-73BB37F91CE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7091F1D3-2FD1-44CD-B0BA-73BB37F91CE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7091F1D3-2FD1-44CD-B0BA-73BB37F91CE7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

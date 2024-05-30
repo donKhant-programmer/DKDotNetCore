@@ -36,7 +36,7 @@
             label3 = new Label();
             btnCancel = new Button();
             btnSave = new Button();
-            button1 = new Button();
+            btnUpdate = new Button();
             SuspendLayout();
             // 
             // txtAuthor
@@ -116,22 +116,27 @@
             btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
             // 
-            // button1
+            // btnUpdate
             // 
-            button1.Location = new Point(170, 312);
-            button1.Name = "button1";
-            button1.Size = new Size(197, 29);
-            button1.TabIndex = 9;
-            button1.Text = "View";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btnUpdate.BackColor = Color.FromArgb(128, 128, 255);
+            btnUpdate.FlatAppearance.BorderSize = 0;
+            btnUpdate.FlatStyle = FlatStyle.Flat;
+            btnUpdate.ForeColor = Color.White;
+            btnUpdate.Location = new Point(275, 266);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(92, 29);
+            btnUpdate.TabIndex = 9;
+            btnUpdate.Text = "&Update";
+            btnUpdate.UseVisualStyleBackColor = false;
+            btnUpdate.Visible = false;
+            btnUpdate.Click += btnUpdate_Click;
             // 
             // FrmBlog
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(793, 406);
-            Controls.Add(button1);
+            Controls.Add(btnUpdate);
             Controls.Add(btnSave);
             Controls.Add(btnCancel);
             Controls.Add(label3);
@@ -158,6 +163,6 @@
         private Label label3;
         private Button btnCancel;
         private Button btnSave;
-        private Button button1;
+        private Button btnUpdate;
     }
 }

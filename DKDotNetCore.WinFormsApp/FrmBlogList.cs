@@ -1,6 +1,7 @@
 ﻿using DKDotNetCore.Shared;
 using DKDotNetCore.WinFormsApp.Models;
 using DKDotNetCore.WinFormsApp.Queries;
+using System.Diagnostics;
 
 namespace DKDotNetCore.WinFormsApp
 {
@@ -19,6 +20,9 @@ namespace DKDotNetCore.WinFormsApp
         private void dgvData_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex == -1) return;
+
+            #region If Case
+
             //int blogId = Convert.ToInt32(dgvData.Rows[e.RowIndex].Cells["ColId"].Value);
             var blogId = Convert.ToInt32(dgvData.Rows[e.RowIndex].Cells["id"].Value);
             var blogAuthor = dgvData.Rows[e.RowIndex].Cells["colTitle"].Value.ToString;
@@ -37,6 +41,34 @@ namespace DKDotNetCore.WinFormsApp
 
                 DeleteBlog(blogId);
             }
+            #endregion
+
+            #region Switch Case
+
+            int index = e.ColumnIndex;
+            EnumFormControlType enumFormControlType = (EnumFormControlType) index;
+            switch (enumFormControlType)
+            {
+                case EnumFormControlType.Edit:
+                    FrmBlog frm = new FrmBlog(blogId: blogId);
+                    frm.ShowDialog();
+
+                    ShowBlogs();
+                    break;
+                case EnumFormControlType.Delete:
+                    var dialogResult = MessageBox.Show("Are you sure u want to delete this", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dialogResult != DialogResult.Yes) return;
+
+                    DeleteBlog(blogId);
+                    break;
+                case EnumFormControlType.None:
+                    MessageBox.Show("Invalid case");
+                    break;
+                default:
+                    break;
+            }
+
+            #endregion
         }
 
         private void DeleteBlog(int id)

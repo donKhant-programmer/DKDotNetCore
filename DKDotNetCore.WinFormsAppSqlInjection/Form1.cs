@@ -14,13 +14,14 @@ namespace DKDotNetCore.WinFormsAppSqlInjection
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            //string query = $"select * from table_user where email = '{txtEmail.Text.Trim()}' and password = '{txtPassword.Text.Trim()}'";
-            string query = $"select * from table_user where email = @Email and password = @Password";
-            var model = _dappperService.QueryFirstOrDefault<UserModel>(query, new
-            {
-                Email = txtEmail.Text.Trim(),
-                Password = txtPassword.Text.Trim()
-            });
+            string query = $"select * from table_user where email = '{txtEmail.Text.Trim()}' and password = '{txtPassword.Text.Trim()}'";
+            var model = _dappperService.QueryFirstOrDefault<UserModel>(query);
+            //string query = $"select * from table_user where email = @Email and password = @Password";
+            //var model = _dappperService.QueryFirstOrDefault<UserModel>(query, new
+            //{
+            //    Email = txtEmail.Text.Trim(),
+            //    Password = txtPassword.Text.Trim()
+            //});
 
             if (model is null)
             {

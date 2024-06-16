@@ -10,14 +10,21 @@ namespace DKDotNetCore.ConsoleApp
 {
     internal class AdoDotNetExample
     {
-        private readonly SqlConnectionStringBuilder sqlConnectionStringBuilder = new SqlConnectionStringBuilder()
+        //private readonly SqlConnectionStringBuilder sqlConnectionStringBuilder = new SqlConnectionStringBuilder()
+        //{
+        //    DataSource = "DESKTOP-07LAQVO",
+        //    InitialCatalog = "DotnetTrainingBatch4",
+        //    UserID = "sa",
+        //    Password = "sa@123"
+        //};
+
+        private readonly SqlConnectionStringBuilder sqlConnectionStringBuilder;
+
+        public AdoDotNetExample(SqlConnectionStringBuilder sqlConnectionStringBuilder)
         {
-            DataSource = "DESKTOP-07LAQVO",
-            InitialCatalog = "DotnetTrainingBatch4",
-            UserID = "sa",
-            Password = "sa@123"
-        };
-        
+            this.sqlConnectionStringBuilder = sqlConnectionStringBuilder;
+        }
+
         public void Read()
         {
 

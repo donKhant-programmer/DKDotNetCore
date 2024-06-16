@@ -7,9 +7,15 @@ using System.Threading.Tasks;
 
 namespace DKDotNetCore.ConsoleApp
 {
-    internal class EFCoreExample
+    public class EFCoreExample
     {
-        private readonly AppDbContext db = new AppDbContext();
+        private readonly AppDbContext _db;
+
+        public EFCoreExample(AppDbContext db)
+        {
+            _db = db;
+        }
+
         public void Run()
         {
             //Edit(2);
@@ -22,7 +28,7 @@ namespace DKDotNetCore.ConsoleApp
 
         private void Read()
         {
-            var lst = db.Blogs.ToList();
+            var lst = _db.Blogs.ToList();
             foreach (BlogDto item in lst)
             {
                 Console.WriteLine(item.BlogId);
@@ -35,7 +41,7 @@ namespace DKDotNetCore.ConsoleApp
 
         private void Edit(int id)
         {
-            var item = db.Blogs.FirstOrDefault(x => x.BlogId == id); // similar to for each iteration
+            var item = _db.Blogs.FirstOrDefault(x => x.BlogId == id); // similar to for each iteration
             if (item is null)
             {
                 Console.WriteLine("No data found");
@@ -57,8 +63,8 @@ namespace DKDotNetCore.ConsoleApp
                 BlogContent = content
             };
             
-            db.Blogs.Add(item); // EFCore benefit -> auto assign id to the object we insert into db.
-            int result = db.SaveChanges();
+            _db.Blogs.Add(item); // EFCore benefit -> auto assign id to the object we insert into _db.
+            int result = _db.SaveChanges();
 
             String message = result > 0 ? "Saving successful!" : "Saving failed!";
             Console.WriteLine(message);
@@ -66,8 +72,8 @@ namespace DKDotNetCore.ConsoleApp
 
         private void Update(int id, String title, String author, String content)
         {
-            //var item = db.Blogs.AsNoTracking().FirstOrDefault(x => x.BlogId == id);
-            var item = db.Blogs.FirstOrDefault(x => x.BlogId == id);
+            //var item = _db.Blogs.AsNoTracking().FirstOrDefault(x => x.BlogId == id);
+            var item = _db.Blogs.FirstOrDefault(x => x.BlogId == id);
             if (item is null)
             {
                 Console.WriteLine("No data found");
@@ -78,7 +84,7 @@ namespace DKDotNetCore.ConsoleApp
             item.BlogAuthor = author;
             item.BlogContent = content;
 
-            int result = db.SaveChanges();
+            int result = _db.SaveChanges();
 
             String message = result > 0 ? "Updating successful!" : "Updating failed!";
             Console.WriteLine(message);
@@ -86,15 +92,15 @@ namespace DKDotNetCore.ConsoleApp
 
         private void Delete(int id)
         {
-            var item = db.Blogs.FirstOrDefault(x => x.BlogId == id); 
+            var item = _db.Blogs.FirstOrDefault(x => x.BlogId == id); 
             if (item is null)
             {
                 Console.WriteLine("No data found");
                 return;
             }
 
-            db.Blogs.Remove(item);
-            int result = db.SaveChanges();
+            _db.Blogs.Remove(item);
+            int result = _db.SaveChanges();
 
             String message = result > 0 ? "Deleting successful!" : "Deleting failed!";
             Console.WriteLine(message);

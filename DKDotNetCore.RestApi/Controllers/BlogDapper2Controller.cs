@@ -14,7 +14,13 @@ namespace DKDotNetCore.RestApi.Controllers
     [ApiController]
     public class BlogDapper2Controller : ControllerBase
     {
-        private readonly DappperService _dapperService = new DappperService(ConnectionStrings.sqlConnectionStringBuilder.ConnectionString);
+        //private readonly DappperService _dapperService = new DappperService(ConnectionStrings.sqlConnectionStringBuilder.ConnectionString);
+        private readonly DappperService _dapperService;
+
+        public BlogDapper2Controller(DappperService dapperService)
+        {
+            _dapperService = dapperService;
+        }
 
         [HttpGet]
         public IActionResult GetBlogs()

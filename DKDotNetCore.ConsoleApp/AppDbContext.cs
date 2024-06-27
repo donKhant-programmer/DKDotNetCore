@@ -25,4 +25,4 @@ namespace DKDotNetCore.ConsoleApp
 }
 
 /*fasdfasfasf*/
-1
+/*fasdfasfasf*/

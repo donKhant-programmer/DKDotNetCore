@@ -23,3 +23,6 @@ namespace DKDotNetCore.ConsoleApp
         public DbSet<BlogDto> Blogs { get; set; }
     }
 }
+
+/*fasdfasfasf*/
+1
